@@ -1,0 +1,31 @@
+header
+	position: fixed
+
+	width: 100vw
+
+	& > a 
+		position: absolute
+		right: 0
+		top: 0
+
+		display: flex
+		justify-content: center
+		height: 32px
+		width: 32px
+
+		color: hsl(0 0% 85%)
+		font-size: 24px
+		font-weight: 600
+		text-decoration: none
+		transition: color .3s
+
+		&:hover
+			color: hsl(140 50% 50%)
+
+main 
+	position: relative
+	top: 59px
+
+	height: calc(100vh - 59px)
+	min-width: 100vw
+	padding: 20px

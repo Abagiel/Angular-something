@@ -1,0 +1,5 @@
+<router-outlet></router-outlet>
+
+<div *ngIf="isAddPersonForm" class="modalForm" (click)="closePersonForm($event)">
+	<app-info-form></app-info-form>
+</div>

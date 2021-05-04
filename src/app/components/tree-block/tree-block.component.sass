@@ -1,0 +1,91 @@
+.info-block
+	position: absolute
+	z-index: 1000
+
+	margin-bottom: 20px
+	max-height: 65px
+	min-height: 65px
+	max-width: 200px
+	min-width: 200px
+	padding: 10px 15px
+	transform: translate(-50%, -50%)
+
+	background: #fff
+	border: 2px solid transparent
+	border-radius: 5px
+	box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.2)
+	cursor: pointer
+	overflow-wrap: break-word
+	user-select: none
+	transition: border-color .3s
+
+	&_name 
+		margin-bottom: 0
+		margin-top: 0
+
+		text-align: center
+
+	&_age
+		display: block
+
+		color: hsl(0 0% 80%)
+		text-align: center
+
+
+	&_info 
+		position: absolute
+		top: 0
+		left: 0
+
+		height: 30px
+		width: 30px
+
+		background: #fff
+		border: 2px solid hsl(240 50% 70%)
+		color: hsl(240 50% 60%)
+		cursor: pointer
+		font-size: 20px
+		font-weight: 600
+		opacity: 0
+		transition: background .3s, color .3s
+
+		&:hover 
+			background: hsl(240 50% 70%)
+			color: #fff
+
+	&_remove
+		position: absolute
+		top: 0
+		right: 0
+
+		height: 30px
+		width: 30px
+
+		background: #fff
+		border: 2px solid hsl(0 50% 70%)
+		color: hsl(0 50% 60%)
+		cursor: pointer
+		font-size: 20px
+		font-weight: 600
+		opacity: 0
+		transition: background .3s, color .3s
+
+		&:hover 
+			background: hsl(0 50% 70%)
+			color: #fff
+
+	&:hover &_remove,
+	&:hover &_info 
+		opacity: 1
+		transition: opacity .3s
+
+	
+
+.gender-male 
+	color: hsl(240 50% 60%)
+	&:hover
+		border-color: hsl(240 50% 70%)
+.gender-female 
+	color: hsl(330 50% 60%)
+	&:hover
+		border-color: hsl(330 50% 70%)

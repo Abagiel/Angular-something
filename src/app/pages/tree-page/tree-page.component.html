@@ -1,0 +1,22 @@
+<header>
+	<a routerLink="" (click)="restoreCurrentFamily()" title="Back to dashboard">&#9031;
+</a>
+	<div class="workspace-title" contenteditable (input)="changeFamilyName($event)">{{familyName}}</div>
+</header>
+
+<main 
+	(dblclick)="addNewPerson($event)"
+	(mousedown)="mousedownHandler($event)"
+	(mouseup)="mouseupHandler()"
+	(mousemove)="canMove ? mousemoveHandler($event) : null"
+	>
+	<app-tree-block 
+		*ngFor="let person of family.persons"
+		[person]="person"
+		[changeCurrentPerson]="changeCurrentPerson"
+		[removePerson]="removePerson"
+	>
+	</app-tree-block>
+
+	<app-info-block *ngIf="isOpenInfoBlock"></app-info-block>
+</main>

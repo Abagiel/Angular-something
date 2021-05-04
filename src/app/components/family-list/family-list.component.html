@@ -1,0 +1,12 @@
+<ul>
+	<app-family-element
+	*ngFor="let family of list"
+	[family]="family"
+	[changeCurrentFamily]="changeCurrentFamily"
+	[removeFamily]="removeFamily"
+	></app-family-element>
+
+	<li class="add-family">	
+		<a routerLink="workspace" (click)="addNewFamily()">.</a>
+	</li>
+</ul>

@@ -1,0 +1,20 @@
+<div class="info-block">
+	<h2>{{person.name}}</h2>
+
+	<app-info-p [title]="'Age'" [content]="person.age"></app-info-p>
+	<app-info-p [title]="'Birth year'" [content]="person.birthYear"></app-info-p>
+	<app-info-p [title]="'Death year'" [content]="person.deathYear || '-'"></app-info-p>
+	<app-info-p [title]="'Gender'" [content]="gender"></app-info-p>
+	<app-info-p [title]="'Status'" [content]="status"></app-info-p>
+
+	<h3>Tasks</h3>
+
+	<ul>
+		<li 
+			*ngFor="let task of person.list"
+			[class]="task.isCompleted ? 'completed' : 'nocompleted'"
+		>
+			<strong>{{task.name}}</strong>
+		</li>
+	</ul>
+</div>

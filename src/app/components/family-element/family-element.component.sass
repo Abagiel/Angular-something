@@ -1,0 +1,41 @@
+.family-element
+	display: flex
+
+	border: 2px solid hsl(0 0% 95%)
+	cursor: pointer
+	border-radius: 5px
+	font-size: 18px
+
+	& > a 
+		display: block
+		flex: 1
+		padding: 10px 20px
+
+		border-top-left-radius: 5px
+		border-bottom-left-radius: 5px
+		color: #000
+		text-decoration: none
+		transition: background .3s, color .3s
+
+		&:hover 
+			background: hsl(140 50% 60%)
+			color: #fff
+
+	& > span 
+		align-items: center
+		display: flex
+		justify-content: center
+		width: 41px
+
+		border-left: 2px solid hsl(0 0% 95%)
+		border-top-right-radius: 5px
+		border-bottom-right-radius: 5px
+		color: hsl(0 0% 90%)
+		font-size: 30px
+		font-weight: 600
+		transition: color .3s, background .3s
+
+		&:hover
+			background: hsl(0 50% 60%)
+			color: #fff
+

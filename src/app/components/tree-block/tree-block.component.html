@@ -1,0 +1,16 @@
+<div
+	[class]="person.gender === 'F' ? 'gender-female info-block' : 'gender-male info-block'"
+	[style]="{left: person.css.left, top: person.css.top}" 
+	(dblclick)="clickHandler($event, person)"
+	(mouseover)="changeCurrentPerson(person)"
+>
+	<h3 
+		[class]="person.gender === 'F' ? 'gender-female info-block_name' : 'gender-male info-block_name'"
+	>{{ person.name | formatFullName }}</h3>
+	<span class="info-block_age">
+	({{person.birthYear}}-{{person?.deathYear || 'alive'}}) ({{person.age}})
+	</span>
+
+	<button class="info-block_info" (click)="infoClickHandler($event, person)">i</button>
+	<button class="info-block_remove" (click)="removePersonHandler(person.id, $event)">&#215;</button>
+</div>

@@ -1,0 +1,38 @@
+<form [formGroup]="form" (submit)="submit()">
+	<input formControlName="fullName" type="text" placeholder="Full Name">
+	<small *ngIf="getErrors('fullName', 'required')">Required!</small>
+
+	<input formControlName="birthYear" (input)="computeAge()" type="number" placeholder="Birth Year">
+	<small *ngIf="getErrors('birthYear', 'required')">Required!</small>
+
+	<input formControlName="deathYear" (input)="computeAge()" type="number" placeholder="Death Year">
+	<input formControlName="age" type="number" placeholder="Age">
+	<small *ngIf="getErrors('age', 'required')">Required!</small>
+
+	<div
+		formArrayName="list"
+		*ngFor="let item of listGroup['controls']; let i = index;"
+	>
+		<div [formGroupName]="i" class="list-group">
+			<input formControlName="name" placeholder="Task #{{i}}">
+			<div class="checker">
+				<span>Completed: </span>
+				<input class="slider-input redgreen" id="isCompleted{{i}}" type="checkbox" formControlName="isCompleted">
+				<label class="slider redgreen" for="isCompleted{{i}}"></label>
+			</div>
+			<span (click)="removeListItem(i)">&#215;</span>
+		</div>
+	</div>
+	<button class="add-person" (click)="addListItem($event)">Add Task</button>
+
+	<div class="checker">
+		<span>Gender: </span>
+		<input class="slider-input" id="gender" type="checkbox" formControlName="gender">
+		<label class="slider" for="gender"></label>
+	</div>
+
+	<button 
+	[class.add-person]="form.status === 'VALID'"
+	[disabled]="form.status !== 'VALID'"
+	>Change Person Information</button>
+</form>

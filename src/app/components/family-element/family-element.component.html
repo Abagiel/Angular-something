@@ -1,0 +1,4 @@
+<li class="family-element">
+	<a routerLink="workspace" (click)="changeCurrentFamily(family)" >{{family.name}} ({{family.persons.length}})</a>
+	<span (click)="removeFamily(family.id)">&#215;</span>
+</li>

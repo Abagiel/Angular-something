@@ -1,0 +1,45 @@
+ul
+	grid-column-gap: 10px
+	grid-row-gap: 10px
+	display: grid
+	grid-template: auto/repeat(auto-fit, minmax(200px, 1fr))
+	padding: 0 
+	list-style: none
+
+	& > .add-family
+		position: relative
+
+		border: 2px solid hsl(0 0% 95%)
+		cursor: pointer
+		border-radius: 5px
+		font-size: 18px
+		font-weight: 600
+		transition: background .3s, opacity .3s
+		&::before 
+			content: '+'
+
+			position: absolute
+			top: 50%
+			left: 50%
+			z-index: -1
+
+			display: block
+			transform: translate(-50%, -50%)
+
+			color: hsl(140 50% 80%)
+			font-size: 60px
+			transition: color .3s
+
+		&:hover 
+			background: hsl(140 50% 50%)
+			opacity: 0.4
+		&:hover::before 
+			color: #fff
+		& > a 
+			display: block
+			height: 100%
+			padding: 10px 20px
+
+			color: transparent
+			text-align: center
+			text-decoration: none
