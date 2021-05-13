@@ -78,9 +78,9 @@ export class InfoFormComponent implements OnInit {
 
     const newInfo = {
       name: fullName,
-      birthYear,
-      deathYear,
-      age,
+      birthYear: +birthYear,
+      deathYear: +deathYear || 0,
+      age: +age,
       gender: gender ? 'F' : 'M',
       list: list.length <= 1 && !list[0]?.name ? [] : list
     }

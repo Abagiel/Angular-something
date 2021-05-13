@@ -62,12 +62,9 @@ export class PersonsService {
 	}
 
 	changePersonInfo(personInfo: PersonInfo) {
-		this.currentPerson.name = personInfo.name;
-		this.currentPerson.birthYear = +personInfo.birthYear;
-		this.currentPerson.deathYear = personInfo.deathYear || 0;
-		this.currentPerson.age = personInfo.age;
-		this.currentPerson.gender = personInfo.gender;
-		this.currentPerson.list = personInfo.list;
+		Object.keys(personInfo).forEach(key => {
+			this.currentPerson[key as keyof PersonInfo] = personInfo[key as keyof PersonInfo] as never;
+		});
 
 		this.saveToStorage();
 	}
