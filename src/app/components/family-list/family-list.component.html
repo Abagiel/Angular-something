@@ -1,12 +1,17 @@
-<ul>
+<ul 
+[style]="{'justify-items': !list.length ? 'center' : 'none'}"
+cdkDropList
+[cdkDropListDisabled]="disableDragDrop"
+(cdkDropListDropped)="reorderList($event)">
 	<app-family-element
 	*ngFor="let family of list"
 	[family]="family"
 	[changeCurrentFamily]="changeCurrentFamily"
 	[removeFamily]="removeFamily"
-	></app-family-element>
+	cdkDrag></app-family-element>
 
-	<li class="add-family">	
+	<li class="add-family" [class.only]="!list.length">	
 		<a routerLink="workspace" (click)="addNewFamily()">.</a>
 	</li>
+
 </ul>

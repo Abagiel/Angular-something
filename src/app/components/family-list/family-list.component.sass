@@ -4,7 +4,13 @@ ul
 	display: grid
 	grid-template: auto/repeat(auto-fit, minmax(200px, 1fr))
 	padding: 0 
+
 	list-style: none
+	overflow: hidden
+
+	& > .only
+		height: 300px
+		width: 300px
 
 	& > .add-family
 		position: relative
@@ -43,3 +49,12 @@ ul
 			color: transparent
 			text-align: center
 			text-decoration: none
+
+.cdk-drag-animating 
+	transition: transform 250ms cubic-bezier(0, 0, 0.2, 1)
+.cdk-drag-placeholder
+	height: 45px
+
+	border: 3px dotted #eee
+.cdk-drag-preview
+	box-shadow: 0 0 0 4px hsla(140, 50%, 50%, 0.3)
